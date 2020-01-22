@@ -30,7 +30,7 @@ defmodule Tetris.Brick do
     |> Enum.random()
   end
 
-  def left(brick)do
+  def left(brick) do
     %{brick | location: point_left(brick.location)}
   end
 
@@ -47,7 +47,7 @@ defmodule Tetris.Brick do
   end
 
   def point_left({x, y}) do
-    {x - 1, y }
+    {x - 1, y}
   end
 
   def point_right({x, y}) do
@@ -59,47 +59,52 @@ defmodule Tetris.Brick do
   end
 
   def rotate(270), do: 0
-  def rotate( degrees), do: degrees+90
+  def rotate(degrees), do: degrees + 90
 
   def shape(%{name: :l}) do
     [
       {2, 1},
-      {2,2},
-         {2,3}, {3,3}
+      {2, 2},
+      {2, 3},
+      {3, 3}
     ]
   end
 
   def shape(%{name: :i}) do
     [
-      {2,1},
-      {2,2},
-      {2,3},
-      {2,4},
+      {2, 1},
+      {2, 2},
+      {2, 3},
+      {2, 4}
     ]
   end
 
-  def shape(%{name: :o})do
+  def shape(%{name: :o}) do
     [
-      {2,2},{3,2},
-      {2,3},{3,3}
+      {2, 2},
+      {3, 2},
+      {2, 3},
+      {3, 3}
     ]
   end
 
   def shape({%{name: :z}}) do
     [
       {
-        {2,2},
-        {2,3},{3,3},
-              {3,4}
+        {2, 2},
+        {2, 3},
+        {3, 3},
+        {3, 4}
       }
     ]
   end
 
-  def shape(%{name: :t})do
+  def shape(%{name: :t}) do
     [
-      {2,1},
-      {2,2}, {3,2},
-      {2,3}
+      {2, 1},
+      {2, 2},
+      {3, 2},
+      {2, 3}
     ]
   end
 end
